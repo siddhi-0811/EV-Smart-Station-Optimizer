@@ -1,26 +1,30 @@
 # EV Smart Station Optimizer
 
+A menu-driven C++ application that recommends the most suitable Electric Vehicle (EV) charging station by considering multiple real-world factors such as shortest distance, battery level, station congestion, charging cost, and optional pre-booking.
+
+---
+
 ## Overview
 
-The **EV Smart Station Optimizer** is a menu-driven C++ application designed to help electric vehicle (EV) users find the most suitable charging station based on multiple real-world factors rather than simply selecting the nearest one.
+The **EV Smart Station Optimizer** is designed to help electric vehicle users find the **best charging station**, rather than simply the nearest one.
 
-The system combines **Dijkstra's Shortest Path Algorithm** with a **multi-factor cost optimization approach** to recommend the best charging station by considering travel distance, station congestion, charging price, battery level, and optional slot pre-booking.
+The system combines **Dijkstra's Shortest Path Algorithm** with a **multi-factor cost optimization approach** to recommend the most suitable charging station. It evaluates several parameters including distance, battery level, charging price, station load, and optional pre-booking before selecting the optimal station.
 
 ---
 
 ## Objectives
 
-- Recommend the optimal EV charging station.
+- Find the optimal charging station for EV users.
 - Minimize travel distance and charging cost.
 - Reduce congestion at charging stations.
-- Provide users with an option to reserve charging slots.
-- Assist station owners in managing charging stations efficiently.
+- Provide an optional charging slot pre-booking facility.
+- Enable station owners to efficiently manage charging stations.
 
 ---
 
-## Modules
+## Features
 
-### 1. EV Owner Module
+### EV Owner Module
 
 The EV owner enters:
 
@@ -29,55 +33,51 @@ The EV owner enters:
 
 The system then asks whether the user wants to **pre-book a charging slot**.
 
-### Pre-booking
-
-If selected:
+#### If Pre-booking is Selected
 
 - Guaranteed charging slot
 - Additional booking charge
+- Station load is automatically updated
 
-If not selected:
+#### If Pre-booking is Not Selected
 
 - First Come First Serve (FCFS) allocation
 - No additional booking cost
 
 ---
 
-### 2. Station Selection Process
+### Charging Station Recommendation
 
 The system performs the following steps:
 
 1. Calculates the shortest distance from the EV location to all charging stations using **Dijkstra's Algorithm**.
-2. Evaluates every available charging station using a cost function.
-3. Selects the station with the minimum overall cost using a greedy approach.
+2. Evaluates every charging station using a multi-factor cost function.
+3. Selects the station with the minimum overall cost using a **Greedy Selection Strategy**.
 
 ---
 
-## Cost Function
+## Cost Function Parameters
 
-The charging station recommendation is based on multiple parameters:
+The recommendation is based on:
 
-- Distance to the station
+- Distance from the EV
 - Current station load
 - Charging price per unit
-- EV battery level
+- EV battery percentage
 - Optional pre-booking cost
-
-This ensures that the selected station provides the best overall balance instead of simply being the closest one.
 
 ---
 
 ## Output
 
-After selecting the optimal charging station, the system displays:
+The system displays:
 
 - Assigned charging station
 - Price per unit
-- Distance
+- Shortest distance
 - Estimated travel time
 - Estimated charging cost
-
-If pre-booking is selected, the system also reserves the charging slot by updating the station load.
+- Booking status
 
 ---
 
@@ -85,9 +85,9 @@ If pre-booking is selected, the system also reserves the charging slot by updati
 
 The station owner can:
 
-- View all charging stations
+- View charging stations
 - Update station load
-- Modify charging capacity
+- Update station capacity
 - Add new charging stations
 - Update charging price
 
@@ -97,9 +97,9 @@ The station owner can:
 
 Users can view:
 
-- Available charging stations
+- Charging station details
 - Charging price
-- Available (free) slots
+- Available free slots
 
 ---
 
@@ -115,35 +115,43 @@ Users can view:
 ## Technologies Used
 
 - C++
+- Object-Oriented Programming (OOP)
 - Standard Template Library (STL)
 - Graphs
 - Priority Queue
-- Object-Oriented Programming (OOP)
+
+---
+
+## How to Run
+
+### Compile
+
+```bash
+g++ main2.cpp -o ev
+```
+
+### Run
+
+```bash
+./ev
+```
+
+For Windows (MinGW):
+
+```bash
+g++ main2.cpp -o ev.exe
+ev.exe
+```
 
 ---
 
 ## Future Enhancements
 
 - Graphical User Interface (GUI)
-- Real-time traffic information
-- Live charging slot availability
-- GPS/Google Maps integration
-- Online database support
-- AI-based charging station recommendation
-
----
-
-## Conclusion
-
-Unlike traditional navigation systems that only consider the shortest route, this project performs **multi-factor optimization** by balancing:
-
-- Distance
-- Charging cost
-- Station congestion
-- Battery level
-- User preference (pre-booking)
-
-This approach provides EV users with a more practical and efficient charging station recommendation system.
+- Google Maps Integration
+- Live Charging Slot Availability
+- AI-Based Charging Station Recommendation
+- Mobile Application Support
 
 ---
 
@@ -151,6 +159,6 @@ This approach provides EV users with a more practical and efficient charging sta
 
 **Siddhi Singh**
 
-B.Tech Computer Science and Engineering (AI & Data Science)
+B.Tech Computer Science & Engineering (AI & Data Science)
 
 MIT World Peace University
