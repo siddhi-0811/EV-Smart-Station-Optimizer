@@ -162,3 +162,22 @@ ev.exe
 B.Tech Computer Science & Engineering (AI & Data Science)
 
 MIT World Peace University
+
+
+
+
+---
+
+## Screenshots
+
+### Main Menu
+
+![Main Menu](screenshots/Screenshot%202026-08-07%20114419.png)
+
+### Charging Station Recommendation
+
+![Charging Station Recommendation](screenshots/Screenshot%202026-08-07%20114435.png)
+
+### Station Owner Module
+
+![Station Owner Module](screenshots/Screenshot%202026-08-07%20114451.png)
